@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>LEDControl</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <form action="/LEDControl" method="post">
+      <label for="R">Rouge</label>
+      <input type="range" min="0" max="255" id="R" name="R"/>
+
+      <label for="G">Vert</label>
+      <input type="range" min="0" max="255" id="G" name="G"/>
+
+      <label for="B">Bleu</label>
+      <input type="range" min="0" max="255" id="B" name="B"/>
+
+      <input value="Changer la couleur" type="submit"/>
+  </body>
+</html>
