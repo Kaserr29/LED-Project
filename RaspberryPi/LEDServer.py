@@ -5,8 +5,16 @@
 from bottle import route, run, template,request
 from LEDSerial import ledColor
 
-@route('/LEDControl')
 
+@get("static/css/<filepath:re:.*\.css>")
+def css(filepath):
+    return static_file(filepath, root="static/css"))
+
+@get("static/js/<filepath:re:.*\.js>")
+def js(filepath):
+    return static_file(filepath, root="views/static/js"))
+
+@route('/LEDControl')
 def LEDControl():
     return template('index')
 
