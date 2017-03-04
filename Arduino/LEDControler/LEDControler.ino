@@ -89,7 +89,7 @@ void colorLoop(int c[][3], int l, int d, int h) {
 }
 
 void convertJson(String json) {
-  const size_t bufferSize = 4 * JSON_ARRAY_SIZE(3) + JSON_ARRAY_SIZE(4) + JSON_OBJECT_SIZE(4) + 80;
+  const size_t bufferSize = 9*JSON_ARRAY_SIZE(3) + JSON_ARRAY_SIZE(9) + JSON_OBJECT_SIZE(4) + 120;
   DynamicJsonBuffer jsonBuffer(bufferSize);
 
   JsonObject& root = jsonBuffer.parseObject(json);
