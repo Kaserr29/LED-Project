@@ -20,13 +20,12 @@ def LEDControl():
 
 @route('/LEDControl', method='POST')
 def do_LEDControl():
-    r = int(request.forms.get('R'))
-    print(r)
-    g = int(request.forms.get('G'))
-    print(g)
-    b = int(request.forms.get('B'))
-    print(b)
-    ledColor(r,g,b)
+    hold = int(request.forms.get('h'))
+    print(hold)
+    fade = int(request.forms.get('t'))
+    print(fade)
+    nbr = int(request.forms.get('n'))
+    print(nbr)
     return template('index')
 
 
