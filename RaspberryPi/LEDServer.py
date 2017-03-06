@@ -2,17 +2,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from bottle import route, run, template,request
-from LEDSerial import ledColor
+from bottle import route, run, template, request, get
+#from LEDSerial import ledColor
 
 
 @get("static/css/<filepath:re:.*\.css>")
 def css(filepath):
-    return static_file(filepath, root="static/css"))
+    return static_file(filepath, root="static/css")
 
 @get("static/js/<filepath:re:.*\.js>")
 def js(filepath):
-    return static_file(filepath, root="views/static/js"))
+    return static_file(filepath, root="static/js")
 
 @route('/LEDControl')
 def LEDControl():
@@ -26,6 +26,14 @@ def do_LEDControl():
     print(fade)
     nbr = int(request.forms.get('n'))
     print(nbr)
+
+    color[[0 for x in range(3)] for y in range(n)]
+    for i in range(n)
+        r = "c"+i
+        for j in range(3)
+            color[i][j] = int(request.forms.get(r))
+    print(color)
+
     return template('index')
 
 
