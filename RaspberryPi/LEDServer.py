@@ -5,14 +5,9 @@
 from bottle import route, run, template, request, get, static_file
 #from LEDSerial import ledColor
 
-
-@get("static/css/<filepath:re:.*\.css>")
-def css(filepath):
-    return static_file(filepath, root="views/static/css")
-
-@get("static/js/<filepath:re:.*\.js>")
-def js(filepath):
-    return static_file(filepath, root="views/static/js")
+@route('/static/<filename>')
+def serve_static(filename):
+    return static_file(filename, root='static')
 
 @route('/LEDControl')
 def LEDControl():
