@@ -12,11 +12,7 @@ def css(filepath):
 
 @get("static/js/<filepath:re:.*\.js>")
 def js(filepath):
-<<<<<<< HEAD
-    return static_file(filepath, root="views")
-=======
     return static_file(filepath, root="views/static/js")
->>>>>>> 441823f9362e145122599522c75bd6373c85e11d
 
 @route('/LEDControl')
 def LEDControl():
