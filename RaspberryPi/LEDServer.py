@@ -12,7 +12,7 @@ def css(filepath):
 
 @get("static/js/<filepath:re:.*\.js>")
 def js(filepath):
-    return static_file(filepath, root="static/js")
+    return static_file(filepath, root="views")
 
 @route('/LEDControl')
 def LEDControl():
@@ -27,10 +27,10 @@ def do_LEDControl():
     nbr = int(request.forms.get('n'))
     print(nbr)
 
-    color[[0 for x in range(3)] for y in range(n)]
-    for i in range(n)
-        r = "c"+i
-        for j in range(3)
+    color = [[0 for x in range(3)] for y in range(nbr)]
+    for i in range(nbr):
+        r = "c"+str(i)
+        for j in range(3):
             color[i][j] = int(request.forms.get(r))
     print(color)
 
