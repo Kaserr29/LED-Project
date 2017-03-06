@@ -2,17 +2,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from bottle import route, run, template, request, get
+from bottle import route, run, template, request, get, static_file
 #from LEDSerial import ledColor
 
 
 @get("static/css/<filepath:re:.*\.css>")
 def css(filepath):
-    return static_file(filepath, root="static/css")
+    return static_file(filepath, root="views/static/css")
 
 @get("static/js/<filepath:re:.*\.js>")
 def js(filepath):
-    return static_file(filepath, root="static/js")
+    return static_file(filepath, root="views/static/js")
 
 @route('/LEDControl')
 def LEDControl():
