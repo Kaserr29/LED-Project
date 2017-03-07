@@ -3,7 +3,7 @@
 # -*- coding: utf-8 -*-
 
 from bottle import route, run, template, request, get, static_file
-#from LEDSerial import ledColor
+from LEDSerial import sendJson
 
 def hex_to_rgb(value):
     """Return (red, green, blue) for the color given as #rrggbb."""
@@ -32,8 +32,9 @@ def do_LEDControl():
     for i in range(nbr):
         r = "c"+str(i)
         for j in range(3):
-            color[i][j] = hex_to_rgb(int(request.forms.get(r)))[j]
+            color[i][j] = hex_to_rgb(request.forms.get(r))[j]
     print(color)
+    sendJson(hold, fade, nbr, color)
 
     return template('index')
 
