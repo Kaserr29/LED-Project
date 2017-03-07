@@ -9,7 +9,7 @@ serial = serial.Serial('/dev/ttyACM0', 9600)
 
 #{"d":1000,"h":1000,"n":4,"c":[[255,0,0],[0,255,0],[0,0,255],[255,255,255]]}
 def sendJson(d,h,n,c):
-    cmd = "{\"d\":
+    cmd = "{\"d\":"
     cmd += str(d)
 
     cmd += ", \"h\":"
