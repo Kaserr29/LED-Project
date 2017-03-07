@@ -9,12 +9,12 @@
     <form action="/LEDControl" method="post">
 
       <label for="h">Durée Allumé</label>
-      <input type="range" name="h" id="h" value="24" min="0" max="1000" oninput="ho.value = h.value">
-      <input type="number" name="ho" id="ho" min="0" max="1000" oninput="h.value = ho.value"/>
+      <input type="range" name="h" id="h" value="1000" min="0" max="1000" oninput="ho.value = h.value">
+      <input type="number" name="ho" id="ho" value="1000" min="0" max="1000" oninput="h.value = ho.value"/>
 
       <label for="h">Durée Transition</label>
-      <input type="range" name="t" id="t" value="24" min="0" max="1000" oninput="to.value = t.value">
-      <input type="number" name="to" id="to" min="0" max="1000" oninput="t.value = to.value"/>
+      <input type="range" name="t" id="t" value="0" min="0" max="1000" oninput="to.value = t.value">
+      <input type="number" name="to" id="to" value="0"min="0" max="1000" oninput="t.value = to.value"/>
 
       <label for="n">Nombre de couleurs</label>
       <select id="n" name="n" oninput="" onchange="test()">
