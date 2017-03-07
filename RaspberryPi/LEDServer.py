@@ -5,6 +5,12 @@
 from bottle import route, run, template, request, get, static_file
 #from LEDSerial import ledColor
 
+def hex_to_rgb(value):
+    """Return (red, green, blue) for the color given as #rrggbb."""
+    value = value.lstrip('#')
+    lv = len(value)
+    return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
+
 @route('/static/<filename>')
 def serve_static(filename):
     return static_file(filename, root='static')
@@ -26,7 +32,7 @@ def do_LEDControl():
     for i in range(nbr):
         r = "c"+str(i)
         for j in range(3):
-            color[i][j] = int(request.forms.get(r))
+            color[i][j] = hex_to_rgb(int(request.forms.get(r)))[j]
     print(color)
 
     return template('index')
